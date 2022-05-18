@@ -9,8 +9,8 @@ config :bcrypt_elixir, :log_rounds, 1
 # to provide built-in test partitioning in CI environment.
 # Run `mix help test` for more information.
 config :round_table, RoundTable.Repo,
-  username: "postgres",
-  password: "postgres",
+  username: "round_table_dev",
+  password: "round_table_dev",
   hostname: "localhost",
   database: "round_table_test#{System.get_env("MIX_TEST_PARTITION")}",
   pool: Ecto.Adapters.SQL.Sandbox,
