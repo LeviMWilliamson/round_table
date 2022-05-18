@@ -67,3 +67,14 @@ PostgreSQL defaults to using `md5` as the login encryption method. Once you chan
 
 #### Creating roles:
 Make sure you use `CREATE USER` to create your database role, or add the `LOGIN` privilege when using the `CREATE ROLE` command.
+
+#### Adding missing extensions:
+Phoenix's authentication module uses the `citext` PostgreSQL extension. If you run into issues related to this extension while running migrations, you may need to add superuser privileges to your database user:
+```sh
+sudo -i -u postgres
+psql
+```
+```sql
+ALTER USER round_table_dev WITH SUPERUSER;
+```
+Then run your migrations again.
