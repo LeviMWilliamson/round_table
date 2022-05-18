@@ -2,8 +2,8 @@ import Config
 
 # Configure your database
 config :round_table, RoundTable.Repo,
-  username: "postgres",
-  password: "postgres",
+  username: "round_table_dev",
+  password: "round_table_dev",
   hostname: "localhost",
   database: "round_table_dev",
   stacktrace: true,
