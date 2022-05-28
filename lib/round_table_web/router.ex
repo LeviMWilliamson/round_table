@@ -89,4 +89,16 @@ defmodule RoundTableWeb.Router do
     get "/users/confirm/:token", UserConfirmationController, :edit
     post "/users/confirm/:token", UserConfirmationController, :update
   end
+
+  ## Campaign routes
+  scope "/", RoundTableWeb do
+    pipe_through [:browser]
+
+    live "/campaigns", CampaignLive.Index, :index
+    live "/campaigns/new", CampaignLive.Index, :new
+    live "/campaigns/:id/edit", CampaignLive.Index, :edit
+
+    live "/campaigns/:id", CampaignLive.Show, :show
+    live "/campaigns/:id/show/edit", CampaignLive.Show, :edit
+  end
 end
