@@ -101,4 +101,16 @@ defmodule RoundTableWeb.Router do
     live "/campaigns/:id", CampaignLive.Show, :show
     live "/campaigns/:id/show/edit", CampaignLive.Show, :edit
   end
+
+  ## World routes
+  scope "/", RoundTableWeb do
+    pipe_through [:browser, :require_authenticated_user]
+
+    live "/worlds", WorldLive.Index, :index
+    live "/worlds/new", WorldLive.Index, :new
+    live "/worlds/:id/edit", WorldLive.Index, :edit
+
+    live "/worlds/:id", WorldLive.Show, :show
+    live "/worlds/:id/show/edit", WorldLive.Show, :edit
+  end
 end
