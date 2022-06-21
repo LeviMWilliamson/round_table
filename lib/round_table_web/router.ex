@@ -21,6 +21,7 @@ defmodule RoundTableWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
+    get "/setup", PageController, :setup
   end
 
   # Other scopes may use custom stacks.
