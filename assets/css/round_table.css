@@ -1,7 +1,7 @@
 a { color: slateblue; }
 
 section.card {
-  margin: 4rem;
+  margin: 4rem 4rem 4rem 0;
   border-radius: 4px;
   padding: 1.5rem;
   background: slateblue;
