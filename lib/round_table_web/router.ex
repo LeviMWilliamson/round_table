@@ -92,7 +92,7 @@ defmodule RoundTableWeb.Router do
   end
 
   ## Campaign routes
-  scope "/", RoundTableWeb do
+  scope "/setup/", RoundTableWeb do
     pipe_through [:browser, :require_authenticated_user]
 
     live "/campaigns", CampaignLive.Index, :index
@@ -104,7 +104,7 @@ defmodule RoundTableWeb.Router do
   end
 
   ## World routes
-  scope "/", RoundTableWeb do
+  scope "/setup/", RoundTableWeb do
     pipe_through [:browser, :require_authenticated_user]
 
     live "/worlds", WorldLive.Index, :index
