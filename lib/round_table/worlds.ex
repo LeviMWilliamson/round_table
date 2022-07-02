@@ -18,7 +18,7 @@ defmodule RoundTable.Worlds do
 
   """
   def list_worlds do
-    Repo.all(World)
+    Repo.all(World) |> Repo.preload([:user])
   end
 
   @doc """
@@ -35,7 +35,7 @@ defmodule RoundTable.Worlds do
       ** (Ecto.NoResultsError)
 
   """
-  def get_world!(id), do: Repo.get!(World, id)
+  def get_world!(id), do: Repo.get!(World, id) |> Repo.preload([:user])
 
   @doc """
   Creates a world.

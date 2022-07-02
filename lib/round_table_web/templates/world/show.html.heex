@@ -1,18 +1,15 @@
 <h1>Show World</h1>
 
-<ul>
+<dl>
+  <dt>Name</dt>
+  <dd><%= @world.name %></dd>
 
-  <li>
-    <strong>Name:</strong>
-    <%= @world.name %>
-  </li>
+  <dt>Description</dt>
+  <dd><%= @world.description %></dd>
 
-  <li>
-    <strong>Description:</strong>
-    <%= @world.description %>
-  </li>
-
-</ul>
+  <dt>Created By</dt>
+  <dd><%= @world.user.id %></dd>
+</dl>
 
 <span><%= link "Edit", to: Routes.world_path(@conn, :edit, @world) %></span> |
 <span><%= link "Back", to: Routes.world_path(@conn, :index) %></span>

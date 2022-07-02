@@ -5,7 +5,7 @@
     <tr>
       <th>Name</th>
       <th>Description</th>
-
+      <th>Creator</th>
       <th></th>
     </tr>
   </thead>
@@ -14,6 +14,7 @@
     <tr>
       <td><%= world.name %></td>
       <td><%= world.description %></td>
+      <td><%= world.user.id %></td>
 
       <td>
         <span><%= link "Show", to: Routes.world_path(@conn, :show, world) %></span>
