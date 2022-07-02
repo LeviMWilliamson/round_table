@@ -10,6 +10,8 @@ import Config
 config :round_table,
   ecto_repos: [RoundTable.Repo]
 
+config :round_table, RoundTable.Repo, migration_primary_key: [type: :uuid]
+
 # Configures the endpoint
 config :round_table, RoundTableWeb.Endpoint,
   url: [host: "localhost"],
