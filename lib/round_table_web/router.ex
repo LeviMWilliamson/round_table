@@ -90,4 +90,10 @@ defmodule RoundTableWeb.Router do
     get "/users/confirm/:token", UserConfirmationController, :edit
     post "/users/confirm/:token", UserConfirmationController, :update
   end
+
+  scope "/setup/", RoundTableWeb do
+    pipe_through [:browser, :require_authenticated_user]
+  
+    resources "/worlds", WorldController
+  end
 end

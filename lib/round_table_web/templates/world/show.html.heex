@@ -1,0 +1,18 @@
+<h1>Show World</h1>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @world.name %>
+  </li>
+
+  <li>
+    <strong>Description:</strong>
+    <%= @world.description %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.world_path(@conn, :edit, @world) %></span> |
+<span><%= link "Back", to: Routes.world_path(@conn, :index) %></span>

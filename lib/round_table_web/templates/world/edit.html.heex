@@ -1,0 +1,5 @@
+<h1>Edit World</h1>
+
+<%= render "form.html", Map.put(assigns, :action, Routes.world_path(@conn, :update, @world)) %>
+
+<span><%= link "Back", to: Routes.world_path(@conn, :index) %></span>

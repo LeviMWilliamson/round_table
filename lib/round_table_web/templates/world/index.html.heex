@@ -1,0 +1,28 @@
+<h1>Listing Worlds</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for world <- @worlds do %>
+    <tr>
+      <td><%= world.name %></td>
+      <td><%= world.description %></td>
+
+      <td>
+        <span><%= link "Show", to: Routes.world_path(@conn, :show, world) %></span>
+        <span><%= link "Edit", to: Routes.world_path(@conn, :edit, world) %></span>
+        <span><%= link "Delete", to: Routes.world_path(@conn, :delete, world), method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New World", to: Routes.world_path(@conn, :new) %></span>

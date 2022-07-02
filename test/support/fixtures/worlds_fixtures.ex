@@ -18,4 +18,19 @@ defmodule RoundTable.WorldsFixtures do
 
     world
   end
+
+  @doc """
+  Generate a world.
+  """
+  def world_fixture(attrs \\ %{}) do
+    {:ok, world} =
+      attrs
+      |> Enum.into(%{
+        description: "some description",
+        name: "some name"
+      })
+      |> RoundTable.Worlds.create_world()
+
+    world
+  end
 end
